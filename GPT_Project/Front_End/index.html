@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Scenario AI</title>
+    <style>
+        /* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set some base styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    background-color: #212121;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #212121;
+    color: #fff;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50; /* Change button color to green */
+  }
+  
+  .buttons a:hover {
+    background-color: #3e8e41; /* Add hover color */
+  }
+  
+  .main-text {
+    margin-top: 70px;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .cta-buttons a {
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+  }
+  
+  .cta-buttons a:hover {
+    background-color: #3e8e41;
+  }
+  
+  .kakao-ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-width: 350px;
+    min-height: 200px;
+  }
+
+  .popup {
+    position: fixed;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    display: none;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .popup p {
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .donate-btn {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .donate-link {
+    display: inline-block;
+    background-color: #ff5e5e;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .donate-link:hover {
+    background-color: #ff3939;
+  }
+  
+  @media (max-width: 768px) {
+    .donate-link {
+      padding: 8px 20px;
+      font-size: 12px;
+      border-radius: 15px;
+    }
+  }
+    </style>
+</head>
+<body>
+    <div style="background-color: white;">
+      <header>
+          <div class="logo">
+            <h2>시나리오 AI</h2>
+          </div>
+          <div class="buttons">
+            <a href="javascript:void(0)" onclick="login()" class="login-button">Login</a>
+          </div>
+        </header>
+        <main>
+          <div class="main-text">
+              <h2>이용하실 서비스를 선택해주세요</h2>
+          </div>
+          <div class="cta-buttons">
+            <a href="/scenarioAI.html" class="button-1" onmouseover="showPopup(1);" onmouseout="hidePopup(1);">시나리오 AI</a>
+            <a href="/lelynovel.html" class="button-2" onmouseover="showPopup(2);" onmouseout="hidePopup(2);">렐리 노벨</a>
+          </div>
+          <div class="donate-btn">
+            <a class="donate-link" href="https://toss.me/daehong770" class="button-1">[시나리오AI 개발자] 후원하기</a>
+            <a class="donate-link" href="https://toss.me/oriris" class="button-2">[랠리노벨 개발자] 후원하기</a>
+          </div>
+          <div class="popup" id="popup">
+              <h4>시나리오 AI</h4>
+              <p>시나리오 AI 서비스는 Chat GPT API를 기반으로 만들어졌으며, 여러가지 파라미터 설정을 통해 AI가 시나리오를 작성해줍니다. 아주 완벽할 수는 없으나, 아이디어를 생각해내고 참고하기에 적합합니다.</p>
+          </div>
+          <div class="popup" id="popup2">
+              <h4>랠리 노벨</h4>
+              <p>렐리노벨 서비스는 Chat GPT API를 기반으로 만들어졌으며, 사용자와 GPT가 번갈아가며 릴레이 소설을 작성합니다. 재미를 위해 사용하기 적합한 서비스입니다.</p>
+          </div>
+        </main>
+        <div class="kakao-ad">
+          <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-WJUOQzfOACxvUT3H" data-ad-width="320"
+              data-ad-height="100"></ins>
+          <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </div>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <script>
+
+        const ScenarioAI = 1;
+        const RelyNovel = 2;
+
+        function showPopup(num) {
+
+            if ( num == ScenarioAI ) {
+
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("popup2").style.display = "none";
+
+            } else {
+
+                document.getElementById("popup2").style.display = "block";
+                document.getElementById("popup").style.display = "none";
+
+            }
+            
+        }
+
+        function hidePopup(num) {
+
+            if ( num == ScenarioAI ) {
+
+                document.getElementById("popup").style.display = "none";
+                document.getElementById("popup2").style.display = "none";
+
+            } else {
+
+                document.getElementById("popup2").style.display = "none";
+                document.getElementById("popup").style.display = "none";
+
+            }
+        }
+
+        function login() {
+            alert("System : 현재 개발 중인 서비스입니다.");
+        }
+    </script>
+</body>
+</html>
