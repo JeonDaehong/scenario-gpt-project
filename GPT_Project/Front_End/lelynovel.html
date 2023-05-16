@@ -114,12 +114,12 @@
             <i class="fa fa-spinner fa-spin"></i>
         </div>
         <div class="chat-input">
-            <input type="text" placeholder="Type your message here...">
+            <input id="novel_input" type="text" placeholder="Type your message here..." >
             <button id="btn" onclick="spinner()">Send</button>
         </div>
     </div>
     <div class="kakao-ad">
-        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-JFUF720yw27EHyi3" data-ad-width="320"
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-WJUOQzfOACxvUT3H" data-ad-width="320"
             data-ad-height="100"></ins>
         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
@@ -127,9 +127,11 @@
         const chatBox = document.querySelector('.chat-box');
         let userMessages = [];
         let assistantMessages = [];
+        let chatInput = document.getElementById('novel_input');
 
         function spinner() {
             document.getElementById('loader').style.display = "block";
+            chatInput.disabled = true;
         }
 
         const sendMessage = async () => {
@@ -158,6 +160,7 @@
             });
 
             const data = await response.json();
+
             document.getElementById('loader').style.display = "none";
             
             //assistantMessage 메세지 추가
@@ -168,6 +171,7 @@
             astrologerMessage.innerHTML = `<p class='assistant'>${data.assistant}</p>`;
 
             chatBox.appendChild(astrologerMessage);
+            chatInput.disabled = false;
         };
 
         document.querySelector('.chat-input button').addEventListener('click', sendMessage);
