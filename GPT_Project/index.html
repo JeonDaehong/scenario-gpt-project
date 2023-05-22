@@ -94,16 +94,16 @@
       // 게임 루프
       function gameLoop() {
         // 플레이어 이동 처리
-        if (keys[37] && player.x > player.speed && !checkCollision(player.x - player.speed, player.y, player.width, player.height, building.x, building.y, building.width, building.height)) {
+        if (keys[37] && !checkCollision(player.x - player.speed, player.y, player.width, player.height, building.x, building.y, building.width, building.height)) {
           player.x -= player.speed; // 왼쪽 화살표
         }
-        if (keys[39] && player.x < canvas.width - player.width - player.speed && !checkCollision(player.x + player.speed, player.y, player.width, player.height, building.x, building.y, building.width, building.height)) {
+        if (keys[39] && !checkCollision(player.x + player.speed, player.y, player.width, player.height, building.x, building.y, building.width, building.height)) {
           player.x += player.speed; // 오른쪽 화살표
         }
-        if (keys[38] && player.y > player.speed && !checkCollision(player.x, player.y - player.speed, player.width, player.height, building.x, building.y, building.width, building.height)) {
+        if (keys[38] && !checkCollision(player.x, player.y - player.speed, player.width, player.height, building.x, building.y, building.width, building.height)) {
           player.y -= player.speed; // 위쪽 화살표
         }
-        if (keys[40] && player.y < canvas.height - player.height - player.speed  && !checkCollision(player.x, player.y + player.speed, player.width, player.height, building.x, building.y, building.width, building.height)) {
+        if (keys[40] && !checkCollision(player.x, player.y + player.speed, player.width, player.height, building.x, building.y, building.width, building.height)) {
           player.y += player.speed; // 아래쪽 화살표
         }
 
@@ -116,20 +116,14 @@
         }
 
         // 카메라 위치 조정
-        const cameraX = Math.max(
-          0,
-          Math.min(player.x - canvas.width / 2, mapWidth - canvas.width)
-        );
-        const cameraY = Math.max(
-          0,
-          Math.min(player.y - canvas.height / 2, mapHeight - canvas.height)
-        );
+        const cameraX = player.x - canvas.width / 2;
+        const cameraY = player.y - canvas.height / 2;
 
         // 캔버스 초기화
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         // 맵 그리기
-        context.fillStyle = 'gray';
+        context.fillStyle = 'white';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         // 건물 그리기
@@ -175,16 +169,16 @@
 
         // 대화 상태 표시
         if (isTalking) {
-          context.fillStyle = 'white';
+          context.fillStyle = 'gray';
           context.fillRect(0, 550, 1000, 150);
           context.strokeRect(0, 550, 1000, 150);
 
-          context.fillStyle = 'black';
+          context.fillStyle = 'white';
           context.font = '23px Arial';
           context.fillText('NPC: 안녕하세요!', 30, 600);
         } else {
           context.clearRect(0, 550, 1000, 150);
-          context.fillStyle = 'gray';
+          context.fillStyle = 'white';
           context.fillRect(0, 550, 1000, 150);
         }
 
