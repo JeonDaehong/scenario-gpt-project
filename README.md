@@ -8,5 +8,6 @@
 ## 2. 프로젝트 목표
 * GPT API를 활용한 서비스 개발
 * Node.js를 활용하여 웹 서비스 개발
+* 카카오 애드핏을 활용하여 광고 수익 창출
 
 ### https://scenario-ai-gpt.pages.dev/
