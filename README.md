@@ -7,5 +7,6 @@
 
 ## 2. 프로젝트 목표
 * GPT API를 활용한 서비스 개발
+* Node.js를 활용하여 웹 서비스 개발
 
 ### https://scenario-ai-gpt.pages.dev/
