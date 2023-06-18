@@ -1,5 +1,6 @@
 ## 0. 개발 기간
-* 2023.04 ~ 2023.04 : 1년차
+* 2023.04 ~ 2023.04
+* 개발 당시 경력 : 1년차
 <br/><br/>
 ## 1. Scenario AI 서버 구조도
 ![image](https://github.com/JeonDaehong/VariousAI_Project/assets/90895144/310345de-62ff-4db0-915b-6abf67442ba2)
