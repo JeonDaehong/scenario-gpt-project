@@ -1,11 +1,11 @@
-# GPT API(v3.5)를 활용하여 만든 웹 사이트
-
-## Front-End : Cloud Flare 를 이용하여 배포
-## Back- End : AWS Ramda 를 이용하여 배포
+## 0. 개발 기간
+* 2023.04 ~ 2023.04 : 1년차
 
 ## 1. Scenario AI 서버 구조도
 ![image](https://github.com/JeonDaehong/VariousAI_Project/assets/90895144/310345de-62ff-4db0-915b-6abf67442ba2)
-
+* GPT API(v3.5)를 활용하여 만든 웹 사이트
+* Front-End : Cloud Flare 를 이용하여 배포
+* Back- End : AWS Ramda 를 이용하여 배포
 
 ## 2. 프로젝트 목표
 * GPT API를 활용한 서비스 개발
