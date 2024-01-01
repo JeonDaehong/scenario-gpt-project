@@ -16,4 +16,4 @@
 * Node.js를 활용하여 웹 서비스 개발
 * 카카오 애드핏을 활용하여 광고 수익 창출
 * Front와 Back을 나누어 서버 배포
-* AWS Ramda를 활용
+* AWS Ramda를 활용하고 배우기
