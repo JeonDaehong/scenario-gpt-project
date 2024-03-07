@@ -2,7 +2,7 @@
 * 2023.05.04 ~ 2023.05.25
 <br/><br/>
 ## 2. 개발 인원
-* 2명
+* 2명 ( 팀장(본인) 1명, 팀원 1명 )
 <br/><br/>
 ## 3. Scenario AI(GPT) 서버 구조도
 ![image](https://github.com/JeonDaehong/VariousAI_Project/assets/90895144/310345de-62ff-4db0-915b-6abf67442ba2)
