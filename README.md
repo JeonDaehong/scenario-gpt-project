@@ -17,13 +17,11 @@
 
 ### GPT API(v3.5)를 활용하여 만든 웹 사이트
 
-### 도메인 : ~~https://scenario-ai-gpt.pages.dev/~~
+### 도메인 : ~~https://scenario-ai-gpt.pages.dev/~~ → 현재는 배포 중단 ( 2024.05.01 )
  
- - 현재는 배포 중단 ( 2024.05.01 )
+ - **Front-End : Cloud Flare 를 이용하여 배포**
  
- - Front-End : Cloud Flare 를 이용하여 배포
- 
- - Back- End : AWS Ramda 를 이용하여 배포
+ - **Back- End : AWS Ramda 를 이용하여 배포**
 
 <br/><br/>
 
