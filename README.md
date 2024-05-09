@@ -26,7 +26,7 @@
 <br/><br/>
 
 ## 5. 프로젝트 목표
- - GPT3.5 API를 활용한 서비스 개발
+ - GPT API를 활용한 서비스 개발
    
  - Javascript 와 Node.js를 활용하여 웹 서비스 개발
    
